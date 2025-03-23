@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Live = () => {
   return (
     <div>page</div>
   )
 }
 
-export default page
+export default Live
