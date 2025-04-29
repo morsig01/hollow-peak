@@ -1,0 +1,46 @@
+'use client'
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+export default function StickyNavbar() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const show = window.scrollY > 100;
+            setIsVisible(show);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <nav className={`fixed top-0 left-0 right-0 z-50 m-3 rounded-3xl transform transition-transform duration-500 bg-black/95 text-white ${
+            isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}>
+            <div className="flex items-center justify-evenly px-6 h-[8vh]">
+                <Link href="/" className="text-xl font-bold">
+                    <Image src="/text-logo-white.png" alt="Band Logo" width={150} height={150}/>
+                </Link>
+                
+                <div className="flex items-center space-x-12 text-lg">
+                    <Link href="/band" className="hover:text-gray-300 transition-colors">
+                        Band
+                    </Link>
+                    <Link href="/live" className="hover:text-gray-300 transition-colors">
+                        Live
+                    </Link>
+                    <Link href="/store" className="hover:text-gray-300 transition-colors">
+                        Store
+                    </Link>
+                    <Link href="/contact" className="hover:text-gray-300 transition-colors">
+                        Contact
+                    </Link>
+                </div>
+            </div>
+        </nav>
+    );
+}
