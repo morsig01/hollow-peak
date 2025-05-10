@@ -18,19 +18,19 @@ export default function Home() {
         <Image src="/logo-white.png" alt="Band Logo" width={200} height={200} className="mb-12" />
         
         <div className="flex flex-row space-x-6">
-          <Link href="https://spotify.com/artist/xxx" className="text-gray-300 hover:text-white transition-colors">
+          <Link href="https://open.spotify.com/artist/1R1117YKWnz7oNMbUlJZnP" className="text-gray-300 hover:text-white transition-colors">
             <Image src="/icons/spotify.svg" alt="Spotify" width={32} height={32} />
           </Link>
-          <Link href="https://youtube.com/xxx" className="text-gray-300 hover:text-white transition-colors">
+          <Link href="https://www.youtube.com/@HollowPeak" className="text-gray-300 hover:text-white transition-colors">
             <Image src="/icons/youtube.svg" alt="YouTube" width={32} height={32} />
           </Link>
-          <Link href="https://tiktok.com/xxx" className="text-gray-300 hover:text-white transition-colors">
+          <Link href="https://www.tiktok.com/@hollowpeakband" className="text-gray-300 hover:text-white transition-colors">
             <Image src="/icons/tiktok.svg" alt="Twitter" width={32} height={32} />
           </Link>
-          <Link href="https://instagram.com/xxx" className="text-gray-300 hover:text-white transition-colors">
+          <Link href="https://www.instagram.com/hollowpeakband/" className="text-gray-300 hover:text-white transition-colors">
             <Image src="/icons/instagram.svg" alt="Instagram" width={32} height={32} />
           </Link>
-          <Link href="https://facebook.com/xxx" className="text-gray-300 hover:text-white transition-colors">
+          <Link href="https://www.facebook.com/profile.php?id=100091543082236" className="text-gray-300 hover:text-white transition-colors">
             <Image src="/icons/facebook.svg" alt="Facebook" width={32} height={32} />
           </Link>
         </div>

@@ -1,10 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Source_Sans_3, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import FooterWrapper from "@/components/FooterWrapper";
-import StickyNavbar from '@/components/StickyNavbar';
-import SmoothScroll from '@/components/SmoothScroll';
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
@@ -25,13 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <StickyNavbar />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        <FooterWrapper />
+      <body className={`${inter.className} ${sourceSans.variable}`}>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

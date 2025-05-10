@@ -4,6 +4,7 @@ import { client } from '@/sanity/lib/client'
 import { type Member } from '@/types/member'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function BandPage() {
   const [members, setMembers] = useState<Member[]>([])
@@ -28,20 +29,20 @@ export default function BandPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative h-[60vh] w-full">
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src="/youtube-banner.jpg" 
             alt="Band Hero Image" 
             className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
       </section>
 
-      {/* Band Members Section */}
-      <section className="pb-16 px-4 max-w-7xl mx-auto">
+      <section className="pb-16 px-4 w-4/5 mx-auto">
         <h2 className="text-5xl font-bold py-24 text-center">Meet the Band</h2>
         <motion.div layout className="flex gap-8">
           <motion.div 
@@ -74,10 +75,12 @@ export default function BandPage() {
                 >
                   <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
                     {member.image && (
-                      <img
+                      <Image
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
+                        width={1920}
+                        height={1080}
                       />
                     )}
                   </div>
@@ -90,7 +93,6 @@ export default function BandPage() {
             </div>
           </motion.div>
 
-          {/* Member Detail Section */}
           {selectedMember && (
             <motion.div
               layout
@@ -106,10 +108,12 @@ export default function BandPage() {
                 ← Back to all members
               </button>
               <div className="space-y-6">
-                <img
-                  src={selectedMember.image}
+                <Image
+                  src={selectedMember.image || '/placeholder-image.jpg'}
                   alt={selectedMember.name}
                   className="w-full h-96 object-cover rounded-lg"
+                  width={1920}
+                  height={1080}
                 />
                 <h2 className="text-3xl font-bold">{selectedMember.name}</h2>
                 <p className="text-xl text-gray-400">{selectedMember.role}</p>

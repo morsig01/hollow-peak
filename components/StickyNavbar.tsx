@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function StickyNavbar() {
     const [isVisible, setIsVisible] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,18 +29,20 @@ export default function StickyNavbar() {
                 </Link>
                 
                 <div className="flex items-center space-x-12 text-lg">
-                    <Link href="/band" className="hover:text-gray-300 transition-colors">
-                        Band
-                    </Link>
-                    <Link href="/live" className="hover:text-gray-300 transition-colors">
-                        Live
-                    </Link>
-                    <Link href="/store" className="hover:text-gray-300 transition-colors">
-                        Store
-                    </Link>
-                    <Link href="/contact" className="hover:text-gray-300 transition-colors">
-                        Contact
-                    </Link>
+                    {[
+                        { href: '/band', label: 'Band' },
+                        { href: '/live', label: 'Live' },
+                        { href: '/store', label: 'Store' },
+                        { href: '/contact', label: 'Contact' }
+                    ].map(({ href, label }) => (
+                        <Link 
+                            key={href}
+                            href={href} 
+                            className={`hover:text-gray-300 transition-colors ${pathname === href ? 'border-b-2' : ''}`}
+                        >
+                            {label}
+                        </Link>
+                    ))}
                 </div>
             </div>
         </nav>
