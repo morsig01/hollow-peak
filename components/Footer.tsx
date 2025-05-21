@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Home, Users, Music, Store, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (

@@ -43,7 +43,7 @@ export default function BandPage() {
       </section>
 
       <section className="pb-16 px-4 w-4/5 mx-auto">
-        <h2 className="text-5xl font-bold py-24 text-center">Meet the Band</h2>
+        <h2 className="text-5xl font py-24 text-center">Meet the Band</h2>
         <motion.div layout className="flex gap-8">
           <motion.div 
             layout
