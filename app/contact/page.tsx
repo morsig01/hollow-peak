@@ -66,6 +66,25 @@ const Contact = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col justify-between flex-grow">
+                        <div>
+              <label htmlFor="inquiryType" className="block mb-2 text-neutral-200">
+                Type of Inquiry
+              </label>
+              <select
+                id="inquiryType"
+                name="inquiryType"
+                required
+                className="w-full p-4 rounded-sm bg-neutral-800 border border-neutral-700 text-neutral-100 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                value={formData.inquiryType}
+                onChange={handleChange}
+              >
+                <option value="">Select inquiry type</option>
+                <option value="booking">Book for Event</option>
+                <option value="collaboration">Musical Collaboration</option>
+                <option value="press">Press/Media Inquiry</option>
+                <option value="fanmail">Fan Mail</option>
+              </select>
+            </div>
             <div>
               <label htmlFor="name" className="block mb-2 text-neutral-200">
                 Full Name
@@ -94,45 +113,6 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-            </div>
-
-            <div>
-              <label htmlFor="inquiryType" className="block mb-2 text-neutral-200">
-                Type of Inquiry
-              </label>
-              <select
-                id="inquiryType"
-                name="inquiryType"
-                required
-                className="w-full p-4 rounded-sm bg-neutral-800 border border-neutral-700 text-neutral-100 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                value={formData.inquiryType}
-                onChange={handleChange}
-              >
-                <option value="">Select inquiry type</option>
-                <option value="booking">Book for Event</option>
-                <option value="collaboration">Musical Collaboration</option>
-                <option value="press">Press/Media Inquiry</option>
-                <option value="fanmail">Fan Mail</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="urgency" className="block mb-2 text-neutral-200">
-                Urgency Level
-              </label>
-              <select
-                id="urgency"
-                name="urgency"
-                required
-                className="w-full p-4 rounded-sm bg-neutral-800 border border-neutral-700 text-neutral-100 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                value={formData.urgency}
-                onChange={handleChange}
-              >
-                <option value="">Select urgency level</option>
-                <option value="low">Not Urgent</option>
-                <option value="medium">Within Next Month</option>
-                <option value="high">As Soon As Possible</option>
-              </select>
             </div>
 
             <button

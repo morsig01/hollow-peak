@@ -1,29 +1,32 @@
 import Link from 'next/link'
+import { Home, Users, Music, Store, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-8">
           {/* Quick Links */}
-          <div className='border-r border-gray-800 pr-4'>
+          <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="flex space-x-6">
               <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
               <li><Link href="/band" className="hover:text-gray-300">Band</Link></li>
-              <li><Link href="/music" className="hover:text-gray-300">Music</Link></li>
-              <li><Link href="/tour" className="hover:text-gray-300">Tour</Link></li>
+              <li><Link href="/live" className="hover:text-gray-300">Live</Link></li>
+              <li><Link href="/store" className="hover:text-gray-300">Store</Link></li>
+              <li><Link href="/contact" className="hover:text-gray-300">Contact</Link></li>
             </ul>
           </div>
 
           {/* Social Links */}
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <ul className="space-y-2">
-              <li><a href="https://spotify.com" className="hover:text-gray-300">Spotify</a></li>
-              <li><a href="https://instagram.com" className="hover:text-gray-300">Instagram</a></li>
-              <li><a href="https://twitter.com" className="hover:text-gray-300">Twitter</a></li>
-              <li><a href="https://youtube.com" className="hover:text-gray-300">YouTube</a></li>
+            <ul className="flex space-x-6">
+              <li><a href="https://open.spotify.com/artist/1R1117YKWnz7oNMbUlJZnP" className="hover:text-gray-300"><img src="/icons/spotify.svg" alt="Spotify" width={24} height={24} /></a></li>
+              <li><a href="https://www.instagram.com/hollowpeakband/" className="hover:text-gray-300"><img src="/icons/instagram.svg" alt="Instagram" width={24} height={24} /></a></li>
+              <li><a href="https://www.youtube.com/@HollowPeak" className="hover:text-gray-300"><img src="/icons/youtube.svg" alt="YouTube" width={24} height={24} /></a></li>
+              <li><a href="https://www.tiktok.com/@hollowpeakband" className="hover:text-gray-300"><img src="/icons/tiktok.svg" alt="TikTok" width={24} height={24} /></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100091543082236" className="hover:text-gray-300"><img src="/icons/facebook.svg" alt="Facebook" width={24} height={24} /></a></li>
             </ul>
           </div>
         </div>
