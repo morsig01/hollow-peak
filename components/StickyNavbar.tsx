@@ -20,8 +20,8 @@ export default function StickyNavbar() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 m-3 rounded-3xl transform transition-transform duration-500 bg-black/95 text-white ${
-            isVisible ? 'translate-y-0' : '-translate-y-full'
+        <nav className={`fixed -top-20 left-0 right-0 z-50 m-3 rounded-3xl transform transition-transform duration-500 bg-black/95 text-white ${
+            isVisible ? 'translate-y-20' : '-translate-y-full'
         }`}>
             <div className="flex items-center justify-evenly px-6 h-[8vh]">
                 <Link href="/" className="text-xl font-bold">
