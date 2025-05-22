@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -20,12 +21,11 @@ export default function Footer() {
           {/* Social Links */}
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <ul className="flex space-x-6">
-              <li><a href="https://open.spotify.com/artist/1R1117YKWnz7oNMbUlJZnP" className="hover:text-gray-300"><img src="/icons/spotify.svg" alt="Spotify" width={24} height={24} /></a></li>
-              <li><a href="https://www.instagram.com/hollowpeakband/" className="hover:text-gray-300"><img src="/icons/instagram.svg" alt="Instagram" width={24} height={24} /></a></li>
-              <li><a href="https://www.youtube.com/@HollowPeak" className="hover:text-gray-300"><img src="/icons/youtube.svg" alt="YouTube" width={24} height={24} /></a></li>
-              <li><a href="https://www.tiktok.com/@hollowpeakband" className="hover:text-gray-300"><img src="/icons/tiktok.svg" alt="TikTok" width={24} height={24} /></a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=100091543082236" className="hover:text-gray-300"><img src="/icons/facebook.svg" alt="Facebook" width={24} height={24} /></a></li>
+            <ul className="flex space-x-6">              <li><a href="https://open.spotify.com/artist/1R1117YKWnz7oNMbUlJZnP" className="hover:text-gray-300"><Image src="/icons/spotify.svg" alt="Spotify" width={24} height={24} /></a></li>
+              <li><a href="https://www.instagram.com/hollowpeakband/" className="hover:text-gray-300"><Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} /></a></li>
+              <li><a href="https://www.youtube.com/@HollowPeak" className="hover:text-gray-300"><Image src="/icons/youtube.svg" alt="YouTube" width={24} height={24} /></a></li>
+              <li><a href="https://www.tiktok.com/@hollowpeakband" className="hover:text-gray-300"><Image src="/icons/tiktok.svg" alt="TikTok" width={24} height={24} /></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100091543082236" className="hover:text-gray-300"><Image src="/icons/facebook.svg" alt="Facebook" width={24} height={24} /></a></li>
             </ul>
           </div>
         </div>

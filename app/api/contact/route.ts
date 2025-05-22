@@ -98,20 +98,19 @@ export async function POST(req: Request) {
       console.log('Admin notification sent:', adminEmail);
 
       return NextResponse.json({ success: true });
-    } catch (error: any) {
+  } catch (error) {
       // If it's already subscribed, return a specific status code
-      if (error.message.includes('already subscribed')) {
+      if (error instanceof Error && error.message.includes('already subscribed')) {
         return NextResponse.json(
           { error: error.message },
           { status: 409 } // HTTP 409 Conflict
         );
       }
       throw error; // Re-throw other errors to be caught by the outer catch
-    }
-  } catch (error: any) {
+    }  } catch (error) {
     console.error('Detailed error:', error);
     return NextResponse.json(
-      { error: error?.message || 'Failed to process subscription' },
+      { error: error instanceof Error ? error.message : 'Failed to process subscription' },
       { status: 500 }
     );
   }

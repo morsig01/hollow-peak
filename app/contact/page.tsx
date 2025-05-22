@@ -6,13 +6,11 @@ const Contact = () => {
   const [email, setEmail] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
-  const [error, setError] = React.useState("");
   const [isAlreadySubscribed, setIsAlreadySubscribed] = React.useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError("");
     setIsAlreadySubscribed(false);
 
     try {
@@ -32,10 +30,8 @@ const Contact = () => {
       }
 
       setIsSuccess(true);
-      setEmail("");
-    } catch (error: any) {
+      setEmail("");    } catch (error) {
       console.error("Error:", error);
-      setError(error.message || "Failed to subscribe. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -58,9 +54,8 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="p-8 bg-neutral-900/50 rounded-sm">
               <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
-              <p className="text-xl text-neutral-300 mb-8">
-                Whether you're interested in booking us for an event, have a
-                press inquiry, or just want to say hello, we'd love to hear from
+              <p className="text-xl text-neutral-300 mb-8">                Whether you&apos;re interested in booking us for an event, have a
+                press inquiry, or just want to say hello, we&apos;d love to hear from
                 you!
               </p>
               <a
@@ -94,10 +89,9 @@ const Contact = () => {
                   Subscribe another email
                 </button>
               </div>
-            ) : isAlreadySubscribed ? (
-              <div className="text-center p-6 bg-blue-900/20 rounded-sm">
+            ) : isAlreadySubscribed ? (              <div className="text-center p-6 bg-blue-900/20 rounded-sm">
                 <h3 className="text-2xl text-blue-400 mb-4">
-                  You're Already Subscribed!
+                  You&apos;re Already Subscribed!
                 </h3>
                 <p className="text-neutral-300 mb-4">
                   This email is already receiving our updates.
